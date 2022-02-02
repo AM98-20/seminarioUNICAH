@@ -59,3 +59,6 @@ typings/
 
 # next.js build output
 .next
+data/medexpdev.sqlite3
+docs/tarea.txt
+docs/thunder-collection_medexp5000.json
