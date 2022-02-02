@@ -1,5 +1,5 @@
 const verifyApiHeaderToken = (req, res, next) => {
-    const { apiToken } = req.headers;
+    const apiToken = req.get('apiToken');
     if (apiToken) {
         if (apiToken == process.env.API_TOKEN) {
             return next();
@@ -7,7 +7,7 @@ const verifyApiHeaderToken = (req, res, next) => {
             sendUnauthorized(res);
         }
     } else {
-
+        return sendUnauthorized(res);
     }
 }
 
